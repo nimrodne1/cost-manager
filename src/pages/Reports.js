@@ -13,7 +13,7 @@ const monthNames = [
 ];
 
 const Reports = () => {
-    const currentMonth = new Date().getMonth(); // חודש נוכחי (אינדקס מ-0)
+    const currentMonth = new Date().getMonth();
     const currentYear = new Date().getFullYear();
 
     const [month, setMonth] = useState(currentMonth);
@@ -22,7 +22,7 @@ const Reports = () => {
 
     useEffect(() => {
         const fetchExpenses = async () => {
-            const result = await getExpensesByMonthYear(month + 1, year);  // month+1 כי ה-IndexedDB משתמש בחודש בין 1-12
+            const result = await getExpensesByMonthYear(month + 1, year);
             setExpenses(result);
         };
         fetchExpenses();
@@ -60,12 +60,10 @@ const Reports = () => {
                 </FormControl>
             </Box>
 
-            {/* Pie Chart - מיקום קודם */}
             <Box sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
                 <ExpenseChart month={month + 1} year={year} />
             </Box>
 
-            {/* Expense List - מיקום אחרי תרשים העוגה */}
             <ExpenseList month={month + 1} year={year} expenses={expenses} />
         </Container>
     );
