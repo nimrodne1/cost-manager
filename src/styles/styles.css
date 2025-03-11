@@ -1,0 +1,134 @@
+/* סגנונות כלליים לכל העמודים */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f3f6; /* צבע רקע רך */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* סגנון עבור כותרות */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* סגנון עבור Containers */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px 20px; /* הוספתי padding רך */
+    background-color: #ffffff;
+    border-radius: 15px; /* פינות מעוגלות */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px); /* הוספתי אפקט של הזזה */
+}
+
+/* כותרת ראשית */
+h3 {
+    font-size: 2rem;
+    color: #3f51b5; /* צבע כחול חזק */
+    margin-bottom: 15px;
+}
+
+/* סגנון עבור טקסט */
+h6 {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5; /* ריווח בין השורות */
+}
+
+/* כפתורים */
+button {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #303f9f;
+}
+
+/* סגנון לעיצוב טפסים */
+input, select, textarea {
+    border-radius: 10px; /* פינות מעוגלות */
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #3f51b5;
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* עבור רשימות הוצאות */
+ul {
+    padding: 0;
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+li {
+    background-color: white;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 12px; /* פינות מעוגלות */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+li:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02); /* אפקט הזום ברשימה */
+}
+
+li .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+}
+
+li .delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* עבור תרשים עוגה */
+.chart-container {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container .recharts-wrapper {
+    border-radius: 12px;
+}
