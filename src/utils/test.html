@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test IndexedDB Vanilla</title>
+</head>
+<body>
+<h1>בדיקת הוספה ושליפה של הוצאות</h1>
+<button onclick="addTestExpense()">הוסף הוצאה</button>
+<button onclick="getThisMonthExpenses()">שלוף הוצאות החודש</button>
+
+<script src="idb-vanilla.js"></script>
+<script>
+  function addTestExpense() {
+    idbvanilla.addExpense({
+      sum: 50,
+      category: 'חינוך',
+      description: 'ספר לימוד',
+      date: new Date().toISOString()
+    }).then(id => {
+      alert("נוסף בהצלחה, ID: " + id);
+    }).catch(console.error);
+  }
+
+  function getThisMonthExpenses() {
+    const now = new Date();
+    const month = now.getMonth() + 1;
+    const year = now.getFullYear();
+
+    idbvanilla.getExpensesByMonthYear(month, year)
+            .then(expenses => {
+              console.log("הוצאות החודש:", expenses);
+              alert("נמצאו " + expenses.length + " הוצאות. ראה בקונסול.");
+            })
+            .catch(console.error);
+  }
+</script>
+
+</body>
+</html>
